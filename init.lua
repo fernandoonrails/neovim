@@ -1,7 +1,3 @@
 require("config.lazy")
 require("keymaps.keymaps")
-
-vim.opt.relativenumber = true
-
-
-
+require("keymaps.keymaps")

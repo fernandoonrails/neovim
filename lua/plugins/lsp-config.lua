@@ -6,7 +6,9 @@ return {
 	end
     },
     {
+    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
     config = function()
 	    require("mason-lspconfig").setup({
 		    ensure_installed = {
@@ -14,7 +16,7 @@ return {
 			    "ts_ls",
 			    "gopls", -- golang
 			    "rust_analyzer", -- rust
-			    "zls" -- zig
+			    "vue-language-server" -- vue
 		    },
 	    })
     end
@@ -26,7 +28,19 @@ return {
 		    lspconfig.lua_ls.setup({})
 		    lspconfig.ts_ls.setup({})
 		    lspconfig.gopls.setup({})
+
+
+		    vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+
 		    lspconfig.rust_analyzer.setup({})
+		    local opts = {
+			    servers = {
+				    bacon_ls = {
+					    enabled = diagnostics == "bacon-ls",
+				    },
+				    rust_analyzer = { enabled = false },
+			    },
+		    }
 		    lspconfig.zls.setup({})
 		    vim.keymap.set('n', "K", vim.lsp.buf.hover, {})
 		    vim.keymap.set('n', "gd", vim.lsp.buf.definition, {})
@@ -36,4 +50,19 @@ return {
 
 	    end
     },
+    {
+        "neovim/nvim-lspconfig",
+	    opts = {
+	        servers = {
+		    volar = {
+		        init_options = {
+			    vue = {
+			        hybridMode = true,
+			    },
+		    },
+		},
+		vtsls = {},
+	    },
+	},
+    }
 }

@@ -33,7 +33,6 @@ vim.g.maplocalleader = "\\"
 --
 require("lazy").setup("plugins")
 
-require("catppuccin").setup()
 --
 
 -- local builtin = require("telescope.builtin")
