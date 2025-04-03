@@ -15,7 +15,23 @@ return {
     -- C-k: Toggle signature help
     --
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = 'default' },
+    keymap = {
+	    ["<Tab>"] = {
+		    function (cmp)
+			    return cmp.select_next()
+		    end,
+		    "snippet_forward",
+		    "fallback",
+	    },
+	    ["<S-Tab>"] = {
+		    function (cmp)
+			    return cmp.select_prev()
+		    end,
+			"snippet_backward",
+			"fallback",
+	    },
+	    ["<CR>"] = { "accept", "fallback", }
+    },
 
     appearance = {
       -- Sets the fallback highlight groups to nvim-cmp's highlight groups
