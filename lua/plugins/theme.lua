@@ -10,6 +10,10 @@
 --     end
 -- }
 
+
+
+
+
 -- rose pine theme
 return {
 	"rose-pine/neovim",
@@ -21,3 +25,31 @@ return {
 		vim.cmd("colorscheme rose-pine")
 	end
 }
+
+
+
+
+
+-- tokyo night theme
+-- return {
+-- 	"folke/tokyonight.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	opts = {},
+--
+-- 	config = function ()
+-- 		vim.cmd("colorscheme tokyonight-storm")
+-- 	end
+-- }
+
+
+
+
+-- dracula theme
+-- return { 
+-- 	"Mofiqul/dracula.nvim",
+-- 	config = function ()
+-- 		vim.cmd("colorscheme dracula")
+-- 	end
+--
+-- }
