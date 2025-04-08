@@ -14,7 +14,7 @@ return {
 			    "ts_ls",
 			    "gopls", -- golang
 			    "rust_analyzer", -- rust
-			    "zls" -- zig
+				"emmet_language_server" -- better html
 		    },
 	    })
     end
@@ -23,11 +23,30 @@ return {
 	    "neovim/nvim-lspconfig",
 	    config = function()
 		    local lspconfig = require("lspconfig")
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+
 		    lspconfig.lua_ls.setup({})
 		    lspconfig.ts_ls.setup({})
 		    lspconfig.gopls.setup({})
 		    lspconfig.rust_analyzer.setup({})
-		    lspconfig.zls.setup({})
+			lspconfig.emmet_language_server.setup({
+				capabilities = capabilities,
+				filetypes = {
+					"css",
+					"eruby",
+					"html",
+					"javascript",
+					"javascriptreact",
+					"sass",
+					"scss",
+					"svelte",
+					"typescriptreact",
+					"vue",
+				},
+
+			})
 		    vim.keymap.set('n', "K", vim.lsp.buf.hover, {})
 		    vim.keymap.set('n', "gd", vim.lsp.buf.definition, {})
 		    vim.keymap.set({ 'n', 'v'}, "<leader>ca", vim.lsp.buf.code_action, {})
