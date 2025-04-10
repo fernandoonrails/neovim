@@ -10,6 +10,11 @@ return {
 				"typescript",
 				"go",
 				"rust",
+				"markdown",
+				"markdown_inline",
+			},
+			ignore_install = {
+				"javascript",
 			},
 			highlight = {
 				enabled = true
@@ -17,6 +22,7 @@ return {
 			ident= {
 				enabled = true
 			},
+			auto_install = true
 		})
 
 
