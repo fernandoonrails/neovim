@@ -5,6 +5,8 @@ vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
 
 -- save
 vim.keymap.set('n', '<leader>w', ':w<CR>')
+-- quit
+vim.keymap.set('n', '<leader>qq', ':q<CR>')
 
 -- file search
 vim.keymap.set('n', '<leader>ee', ':Ex<CR>')
