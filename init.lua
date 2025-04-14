@@ -1,6 +1,5 @@
 require("config.lazy")
-require("settings.keymaps")
-require("settings.virtual-lines")
+require("settings")
 
 vim.opt.relativenumber = true
 vim.opt.shiftwidth = 4

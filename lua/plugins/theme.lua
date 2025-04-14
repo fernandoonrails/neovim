@@ -1,3 +1,34 @@
+function TransparentGb(color)
+	color = color or "tokyonight-storm"
+	vim.cmd.colorscheme(color)
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" } )
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" } )
+end
+
+return {
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
+		},
+
+		config = function ()
+			-- theme can be:
+			-- catppuccin
+			-- dracula
+			-- rose-pine
+			TransparentGb()
+			vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+
+		end
+	}
+}
 -- catppuccin theme
 -- return {
 --     "catppuccin/nvim",
@@ -23,16 +54,18 @@
 -- }
 
 -- tokyo night theme
-return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-
-	config = function ()
-		vim.cmd("colorscheme tokyonight-night")
-	end
-}
+-- return {
+-- 	{
+-- 		"folke/tokyonight.nvim",
+-- 		opts = {
+-- 			transparent = true,
+-- 			styles = {
+-- 				sidebars = "transparent",
+-- 				floats = "transparent",
+-- 			},
+-- 		},
+-- 	},
+-- }
 
 -- dracula theme
 -- return { 
