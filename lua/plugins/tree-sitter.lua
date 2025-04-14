@@ -12,6 +12,7 @@ return {
 				"rust",
 				"markdown",
 				"markdown_inline",
+				"toml",
 			},
 			ignore_install = {
 				"javascript",
