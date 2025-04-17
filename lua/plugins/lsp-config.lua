@@ -15,7 +15,8 @@ return {
 			    "gopls", -- golang
 			    "rust_analyzer", -- rust
 				"emmet_language_server", -- better html
-				"marksman"
+				"marksman",
+				"sqls",
 		    },
 	    })
     end
@@ -49,6 +50,7 @@ return {
 
 			})
 			lspconfig.marksman.setup({})
+			lspconfig.sqls.setup({"sqls", "postgres"})
 
 
 		    vim.keymap.set('n', "K", vim.lsp.buf.hover, {})
