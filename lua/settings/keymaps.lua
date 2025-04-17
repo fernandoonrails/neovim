@@ -11,6 +11,8 @@ vim.keymap.set('n', '<leader>qq', ':q<CR>')
 -- file search
 vim.keymap.set('n', '<leader>ee', ':Ex<CR>')
 
+vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
+
 
 vim.keymap.set('n', "K", vim.lsp.buf.hover, {})
 vim.keymap.set('n', "gd", vim.lsp.buf.definition, {})
